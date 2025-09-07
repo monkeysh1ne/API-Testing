@@ -15,14 +15,16 @@ async function getItems() {
                 `;
             if (item.extendedIngredients && Array.isArray(item.extendedIngredients)) {
                 item.extendedIngredients.forEach(function(ingredient){
-                    output += `
-                    <div id='displayIngredients'>
-                        <ul>
-                            <li>&#8226; ${ingredient.amount} ${ingredient.unit} ${ingredient.originalName}</li>
-                        </ul>
-                    </div>
-                    `;
-                });
+                output += `
+                <div id='displayIngredients'>
+                    <ul>
+                        <li>&#8226; ${ingredient.amount} ${ingredient.unit} ${ingredient.originalName}</li>
+                    </ul>
+                </div>
+                `;
+            });
+
+            
         };
         document.getElementById('output').innerHTML = output;
     });
