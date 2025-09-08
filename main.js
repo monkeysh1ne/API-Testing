@@ -16,6 +16,8 @@ async function getItems() {
         Object.values(data).forEach((val) => {
             console.log(val);
         })
+        console.log(arr2[0]['nutrition']);
+        // console.log(arr2[0]['nutrition']);
         let output = '<h2>Recipe</h2>';
         data.forEach(function(item){
             output += `
