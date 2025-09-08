@@ -1,4 +1,5 @@
-{
+[
+    {
     "id": 468523,
     "image": "https://img.spoonacular.com/recipes/468523-556x370.jpg",
     "imageType": "jpg",
@@ -293,7 +294,6 @@
             }
         }
     ],
-    "nutrition": {
         "nutrients": [
             {
                 "name": "Calories",
@@ -3118,7 +3118,6 @@
                 }
             ]
         }
-    ],
-    "originalId": null,
-    "spoonacularScore": 78.8389663696289
-}
+    ]
+    }
+]
