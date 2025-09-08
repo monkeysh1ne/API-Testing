@@ -2,7 +2,21 @@ async function getItems() {
     fetch('results.json')
     .then((res) => res.json())
     .then((data) => {
-        let output = '<h2>Output</h2>';
+        const arr1 = (Object.keys(data));
+        const arr2 = (Object.values(data));
+        console.log(arr2);
+        for(i in arr2){
+            console.log(i,arr2[i]);
+        }
+        arr2.forEach((item,index,array)=>{
+            console.log(item);
+            console.log(index);
+            console.log(array);
+        })
+        Object.values(data).forEach((val) => {
+            console.log(val);
+        })
+        let output = '<h2>Recipe</h2>';
         data.forEach(function(item){
             output += `
             <div id='displayData'>
