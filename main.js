@@ -16,7 +16,11 @@ async function getItems() {
         Object.values(data).forEach((val) => {
             console.log(val);
         })
-        console.log(arr2[0]['nutrition']);
+        console.log(arr2[0]['nutrition']['nutrients']);
+        nutrients = arr2[0]['nutrition']['nutrients'];
+        Object.values(nutrients).forEach((val) => {
+            console.log(val);
+        })
         // console.log(arr2[0]['nutrition']);
         let output = '<h2>Recipe</h2>';
         data.forEach(function(item){
@@ -39,6 +43,19 @@ async function getItems() {
                     </div>
                     `;
                 });
+            
+                if (nutrients && Array.isArray(nutrients)) {
+                    output += '<h3>Nutrition Breakdown</h3>';
+                    nutrients.forEach(function(nutrient) {
+                        output += `
+                        <div>
+                            <ul>
+                                <li>&#8226; ${nutrient.name} ${nutrient.amount} ${nutrient.unit}</li>
+                            </ul>
+                        </div>
+                        `;
+                    })
+                }
         };
         document.getElementById('output').innerHTML = output;
     });
