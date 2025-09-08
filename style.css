@@ -11,6 +11,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
+  columns: 3;
 }
 
 ul {
@@ -22,10 +23,13 @@ ul {
   padding: 0;
   margin: 0;
   border-radius: 0.1rem;
+  columns: 25rem;
+  column-gap: 7rem;
 }
 
 li {
   padding: 0 0 0 1rem;
+  break-inside: avoid;
 }
 li:not(:last-child) {
   border-bottom: 1px solid lightblue;
@@ -59,6 +63,11 @@ li:nth-child(3n-1)::marker {
 
 #displayIngredients p {
   margin-left: 40px;
+}
+
+.wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */

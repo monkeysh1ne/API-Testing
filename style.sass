@@ -12,6 +12,7 @@ body
   display: grid
   place-items: center
   min-height: 100vh
+  columns: 3
 
 ul
   list-style-position: inside
@@ -22,9 +23,12 @@ ul
   padding: 0
   margin: 0
   border-radius: 0.1rem
+  columns: 25rem
+  column-gap: 7rem
 
 li
   padding: 0 0 0 1rem
+  break-inside: avoid
 
   &:not(:last-child)
     border-bottom: 1px solid lightblue
@@ -57,3 +61,7 @@ li
 #displayIngredients
     p
         margin-left: 40px
+
+.wrapper
+  max-width: 80rem
+  margin: 0 auto
