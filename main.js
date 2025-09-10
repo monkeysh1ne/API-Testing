@@ -32,56 +32,64 @@ async function getItems() {
 
             // ---------End Testing Array Loops <----------
             let output = '<h2>Recipe</h2>';
+            let introDiv = '';
+            let ingredientsDiv = '';
+            let nutritionDiv = '';
+            let stepsDiv = '';
+
             data.forEach(function (item) {
-                output += `
-            <div id='displayData'>
+                introDiv += `
                 <p>ID: ${item.id}</p>
                 <p>Title: ${item.title}</p>
                 <p>Src: <a href="${item.sourceUrl}"> ${item.sourceUrl}</a></p>
                 <p>Summary: ${item.summary}</p>
                 <h3>Ingredients ...</h3>
-            </div>
                 `;
                 // Ingredients
-                output += `<div>`;
-                output += `<ul>`;
+                ingredientsDiv += `<ul>`;
                 if (item.extendedIngredients && Array.isArray(item.extendedIngredients)) {
                     item.extendedIngredients.forEach(function (ingredient) {
-                        output += `
+                        ingredientsDiv += `
                         <li>&#8226; ${ingredient.amount} ${ingredient.unit} ${ingredient.originalName}</li>
                     `;
                     });
                 }
-                output += `</ul>`;
+                ingredientsDiv += `</ul>`;
                 // Nutrition
-                output += `<div>`;
-                output += `<ul>`;
+                nutritionDiv += `<ul>`;
                 if (nutrients && Array.isArray(nutrients)) {
-                    output += '<h3>Nutrition Breakdown</h3>';
+                    nutritionDiv += '<h3>Nutrition Breakdown</h3>';
                     nutrients.forEach(function (nutrient) {
-                        output += `
+                        nutritionDiv += `
                         <li>&#8226; ${nutrient.name} ${nutrient.amount} ${nutrient.unit}</li>
                     `;
                     })
-                    output += '</ul>';
+                    nutritionDiv += '</ul>';
                 }
-                output += '</div>';
                 // Prep & Cooking Steps
-                output += `<div>`;
-                output += `<ul>`;
+                stepsDiv += `<ul>`;
                 if (steps && Array.isArray(steps)) {
-                    output += `<h3>Prep & Cooking Steps</h3>`;
+                    stepsDiv += `<h3>Prep & Cooking Steps</h3>`;
                     steps.forEach(function (step) {
-                        output += `
+                        stepsDiv += `
                         <li class="no">${step.number} ${step.step}</li>
                     `;
                     })
-                    output += `</ul>`;
+                    stepsDiv += `</ul>`;
                 }
-                output += `</div>`;
-                document.getElementById('output').innerHTML = output;
+                document.getElementById('introDiv').innerHTML = introDiv;
+                document.getElementById('ingredientsDiv').innerHTML = ingredientsDiv;
+                document.getElementById('nutritionDiv').innerHTML = nutritionDiv;
+                document.getElementById('stepsDiv').innerHTML = stepsDiv;
             });
         })
 }
 
 getItems();
+
+
+// for hiding or showing nutrition section
+/* let nutritionSection = document.querySelector(".nutritionSection");
+function showHideNutrients(){
+    nutritionSection.style.display = "none";
+} */
