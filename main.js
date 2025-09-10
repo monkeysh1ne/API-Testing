@@ -89,7 +89,11 @@ getItems();
 
 
 // for hiding or showing nutrition section
-/* let nutritionSection = document.querySelector(".nutritionSection");
-function showHideNutrients(){
-    nutritionSection.style.display = "none";
-} */
+function showHideNutrients(nutritionDiv) {
+    var e = document.getElementById('nutritionDiv');
+    if (e.style.display === 'block') {
+        e.style.display = 'none';
+    } else {
+        e.style.display = 'block';
+    }
+}
