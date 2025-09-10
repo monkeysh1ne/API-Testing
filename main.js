@@ -43,7 +43,7 @@ async function getItems() {
             </div>
                 `;
                 // Ingredients
-                output += `<div id="wrapper">`;
+                output += `<div>`;
                 output += `<ul>`;
                 if (item.extendedIngredients && Array.isArray(item.extendedIngredients)) {
                     item.extendedIngredients.forEach(function (ingredient) {
@@ -54,7 +54,7 @@ async function getItems() {
                 }
                 output += `</ul>`;
                 // Nutrition
-                output += `<div id="wrapper">`;
+                output += `<div>`;
                 output += `<ul>`;
                 if (nutrients && Array.isArray(nutrients)) {
                     output += '<h3>Nutrition Breakdown</h3>';
@@ -67,17 +67,18 @@ async function getItems() {
                 }
                 output += '</div>';
                 // Prep & Cooking Steps
-                                output += `<ul>`;
+                output += `<div>`;
+                output += `<ul>`;
                 if (steps && Array.isArray(steps)) {
-                    output += '<h3>Prep & Cooking Steps</h3>';
+                    output += `<h3>Prep & Cooking Steps</h3>`;
                     steps.forEach(function (step) {
                         output += `
-                        <li>&#8226; ${step.number}</li>
+                        <li class="no">${step.number} ${step.step}</li>
                     `;
                     })
-                    output += '</ul>';
+                    output += `</ul>`;
                 }
-                output += '</div>';
+                output += `</div>`;
                 document.getElementById('output').innerHTML = output;
             });
         })
