@@ -50,7 +50,7 @@ async function getItems() {
                 if (item.extendedIngredients && Array.isArray(item.extendedIngredients)) {
                     item.extendedIngredients.forEach(function (ingredient) {
                         ingredientsDiv += `
-                        <li>&#8226; ${ingredient.amount} ${ingredient.unit} ${ingredient.originalName}</li>
+                        <li>${ingredient.amount} ${ingredient.unit} ${ingredient.originalName}</li>
                     `;
                     });
                 }
@@ -61,7 +61,7 @@ async function getItems() {
                     nutritionDiv += '<h3>Nutrition Breakdown</h3>';
                     nutrients.forEach(function (nutrient) {
                         nutritionDiv += `
-                        <li>&#8226; ${nutrient.name} ${nutrient.amount} ${nutrient.unit}</li>
+                        <li>${nutrient.name} ${nutrient.amount} ${nutrient.unit}</li>
                     `;
                     })
                     nutritionDiv += '</ul>';
@@ -86,7 +86,6 @@ async function getItems() {
 }
 
 getItems();
-
 
 // for hiding or showing nutrition section
 function showHideNutrients(nutritionDiv) {
