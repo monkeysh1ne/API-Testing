@@ -40,8 +40,8 @@ async function getItems() {
             data.forEach(function (item) {
                 introDiv += `
                 <p>ID: ${item.id}</p>
-                <p>Title: ${item.title}</p>
-                <p>Src: <a href="${item.sourceUrl}"> ${item.sourceUrl}</a></p>
+                <h2>Title: ${item.title}</h2>
+                <p>src:(<a href="${item.sourceUrl}"> ${item.sourceUrl}</a>)</p>
                 <p>Summary: ${item.summary}</p>
                 <h3>Ingredients ...</h3>
                 `;
@@ -67,12 +67,12 @@ async function getItems() {
                     nutritionDiv += '</ul>';
                 }
                 // Prep & Cooking Steps
-                stepsDiv += `<ul>`;
+                stepsDiv += `<ul style="list-style: none">`;
                 if (steps && Array.isArray(steps)) {
                     stepsDiv += `<h3>Prep & Cooking Steps</h3>`;
                     steps.forEach(function (step) {
                         stepsDiv += `
-                        <li class="no">${step.number} ${step.step}</li>
+                        <li>${step.number}. ${step.step}</li>
                     `;
                     })
                     stepsDiv += `</ul>`;

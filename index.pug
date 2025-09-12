@@ -1,5 +1,5 @@
 doctype html
-html(lang="en" data-theme="light")
+html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -8,7 +8,10 @@ html(lang="en" data-theme="light")
         // Compressed CSS
         //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous")
         //- PICO CDN css framework
-        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css")
+        //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css")
+        //- Bootstrap CDN
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         // Compressed JavaScript
         //- script(src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous")
         link(rel="stylesheet" type="text/css" href="style.css")
@@ -21,7 +24,7 @@ html(lang="en" data-theme="light")
                     #introDiv
                     #ingredientsDiv
                     #stepsDiv
-                    button(onclick="showHideNutrients()") Show Hide Nutrition Data
+                    button(onclick="showHideNutrients()" class="btn btn-primary") Show Hide Nutrition Data
                     //- Following will eventually replace button
                     //- fieldset
                     //-     label Show Nutrients
@@ -31,4 +34,3 @@ html(lang="en" data-theme="light")
                     //-         role='switch') 
                     #nutritionDiv 
         script(src="main.js")
-    

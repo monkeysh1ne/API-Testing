@@ -1,36 +1,21 @@
 // Variables
-$primary-color: #000
+// Colors
+$primary-color: #dadbbd
+$card-primary: #b5a882
+$text-color: #2f2019
+$btn-primary: #39322e
 
-*
-  box-sizing: border-box
-
+    
 body
-  color: #000
+    margin: 10px 20px
+    background-color: $primary-color
 
+    .card
+        background: $card-primary
+        padding: 20px
+        color: $text-color
+        btn-primary: $btn-primary
 
-  .content
-    border-radius: 5px
-
-button
-  margin-left: 20px
-  margin-bottom: 20px
-
-
-
-
-
-#displayData
-  p
-    margin-left: 20px
-    color: $primary-color
-
-#id
-  font-weight: bold
-
-#displayIngredients
-  p
-    margin-left: 40px
-
-.wrapper
-  max-width: 80rem
-  margin: 0 auto
+    
+    ul.ingredientsDiv
+        list-style: none
